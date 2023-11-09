@@ -1,50 +1,25 @@
 package lab1;
 
+import javax.swing.*;
+
 /**
  * Describe responsibilities here.
  *
  * @author your name goes here
  * @version 1.00
  */
-public class IntroJavaCourse {
-
-    String courseName;
-    double credits;
-    String prerequisites;
-    private String courseNumber;
-
+public class IntroJavaCourse extends Course {
     public IntroJavaCourse(String courseName, String courseNumber) {
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
+        super(courseName, courseNumber);
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
+
+
+    @Override
+    public void displayCourseInformation() {
+        System.out.println("Course: ");
+        System.out.println( "Name: " + getCourseName() + " " + "Course Number:" + getCourseNumber() + " " + "Credits:" + getCredits());
     }
 
-    public void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
-    }
-
-    public void setCredits(double credits) {
-        if (credits < 0 || credits > 5.0) {
-            System.out.println(
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
-        }
-        this.setCredits(credits);
-    }
-
-    public String getPrerequisites() {
-        return prerequisites;
-    }
-
-    public void setPrerequisites(String prerequisites) {
-        this.prerequisites = prerequisites;
-    }
 
 }
